@@ -8,8 +8,8 @@ const credentials = [
 const trustSignals = [
   "Broadcast credits across major UK and international networks",
   "Streaming deliverables for global SVOD platforms",
-  "Blue-chip corporate and financial sector clients",
-  "FTSE 100 and Fortune 500 brand work",
+  "Financial services and pharmaceutical sector specialists",
+  "FTSE 100 and JSE-listed brand work",
   "Award-winning documentary and drama post",
   "Approved supplier to regulated industries",
 ];
@@ -26,25 +26,25 @@ export default function About() {
               About BAC Media
             </p>
             <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight mb-6">
-              Trusted by the Clients Who Can't Be Named
+              Production That Earns Trust, Then Keeps It
             </h2>
             <p className="text-gray-500 text-lg leading-relaxed mb-4">
-              BAC Media is a video and post production company built around one
-              principle: the work is only as good as the trust behind it. We
-              operate at the intersection of creative excellence and airtight
-              confidentiality.
+              BAC Media is a video and post production company with a track
+              record spanning financial services, pharmaceuticals, property,
+              technology, and media. We've worked with household names and
+              global brands — some of whom we can introduce you to, many of
+              whom prefer to stay quietly in the credits.
             </p>
             <p className="text-gray-500 text-lg leading-relaxed mb-4">
-              Our clients are household names, major broadcasters, global
-              financial institutions, and regulated businesses — many of whom
-              we can't name. That's exactly the point. When they need
-              production work done at the highest level, without it showing up
-              in someone else's showreel, they call us.
+              Our work is built on two things: the quality of the craft and
+              the trust of our clients. Every project is treated with the same
+              rigour whether it's a 30-second social cut or a broadcast
+              documentary — and every team member operates under NDA as
+              standard.
             </p>
             <p className="text-gray-500 text-lg leading-relaxed mb-8">
-              Every project is handled under strict NDAs. Every team member is
-              vetted. Every deliverable is treated as if the world is watching —
-              because often, it is.
+              If you're working on something that can't afford to go wrong —
+              creatively or commercially — you're in the right place.
             </p>
             <a
               href="#contact"
@@ -70,14 +70,14 @@ export default function About() {
           </div>
         </div>
 
-        {/* Trust signals */}
+        {/* Credentials */}
         <div className="rounded-2xl bg-gray-950 text-white p-10 sm:p-14">
           <div className="max-w-3xl mx-auto text-center mb-10">
             <p className="text-sm font-semibold tracking-widest uppercase text-blue-400 mb-3">
               Credentials
             </p>
             <h3 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-              A Track Record We Can Describe, If Not Always Name
+              A Track Record Across Industries
             </h3>
           </div>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
