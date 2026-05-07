@@ -1,33 +1,41 @@
 const steps = [
-  { number: "01", title: "Brief & Discovery", description: "Every project begins with a thorough brief. We take time to understand your creative vision, technical requirements, delivery specs, and any sensitivities — before a single frame is touched." },
-  { number: "02", title: "Pipeline Design", description: "We map a bespoke workflow around your project — camera formats, VFX pulls, versioning requirements, and broadcaster deliverables — so nothing is left to chance in post." },
-  { number: "03", title: "Production & Capture", description: "Where we're involved on the shoot, our on-set team ensures the production pipeline feeds seamlessly into post. Consistent metadata, organised rushes, no surprises in the edit." },
-  { number: "04", title: "Post Production", description: "Offline, online, grade, VFX, and audio — handled in-house or with our trusted partner network. You have a single point of contact throughout, with regular reviews built into the schedule." },
-  { number: "05", title: "Review & Approval", description: "Secure, private review links for client feedback. No public sharing, no third-party platforms that compromise confidentiality. Notes are tracked, actioned, and signed off at each stage." },
-  { number: "06", title: "Delivery & Archive", description: "Masters delivered to spec, on time. We handle QC, broadcast compliance, and multi-platform versioning. Your assets are securely archived and accessible when you need them." },
+  { number: "01", title: "Brief & Discovery", description: "We take time to understand your creative vision, technical requirements, delivery specs, and sensitivities — before a single frame is touched." },
+  { number: "02", title: "Pipeline Design", description: "A bespoke workflow mapped around your project — camera formats, VFX pulls, versioning, broadcaster deliverables. Nothing left to chance." },
+  { number: "03", title: "Production & Capture", description: "Where we're involved on the shoot, our on-set team ensures the pipeline feeds seamlessly into post. Organised rushes. No surprises in the edit." },
+  { number: "04", title: "Post Production", description: "Offline, online, grade, VFX, and audio — in-house or via our trusted partner network. Single point of contact. Regular reviews built in." },
+  { number: "05", title: "Review & Approval", description: "Secure, private review links. No public platforms, no compromised confidentiality. Notes tracked, actioned, and signed off at every stage." },
+  { number: "06", title: "Delivery & Archive", description: "Masters to spec, on time. QC, broadcast compliance, multi-platform versioning. Assets securely archived and accessible whenever you need them." },
 ];
 
 export default function Work() {
   return (
-    <section id="process" className="py-24 bg-zinc-950">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <p className="text-xs font-semibold tracking-widest uppercase text-[#ffdd15] mb-3">How We Work</p>
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">A Process Built for High-Stakes Projects</h2>
-          <p className="mt-4 text-base text-gray-400 max-w-2xl mx-auto">
-            Rigorous. Transparent. Confidential. Our workflow is designed for clients where getting it right — and keeping it private — is non-negotiable.
+    <section id="process" className="py-28 bg-zinc-950">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10">
+
+        {/* Header */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16 pb-8 border-b border-zinc-900">
+          <div>
+            <span className="rule-yellow mb-4 inline-block" />
+            <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">Our Process</h2>
+          </div>
+          <p className="text-sm text-zinc-500 max-w-xs leading-relaxed sm:text-right">
+            Rigorous. Transparent. Confidential.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {/* Steps grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-zinc-900">
           {steps.map((s) => (
-            <div key={s.number} className="rounded-xl bg-zinc-900 border border-zinc-800 p-8 hover:border-zinc-600 transition-colors">
-              <p className="text-4xl font-extrabold text-[#ffdd15]/20 mb-4 leading-none">{s.number}</p>
-              <h3 className="text-base font-bold text-white mb-3">{s.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">{s.description}</p>
+            <div key={s.number} className="bg-zinc-950 p-10 group hover:bg-[#ffdd15]/[0.03] transition-colors duration-500">
+              <p className="text-6xl font-extrabold text-zinc-900 mb-8 leading-none tabular-nums group-hover:text-[#ffdd15]/10 transition-colors duration-500">
+                {s.number}
+              </p>
+              <h3 className="text-sm font-bold text-white uppercase tracking-widest mb-3">{s.title}</h3>
+              <p className="text-sm text-zinc-500 leading-relaxed">{s.description}</p>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

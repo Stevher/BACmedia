@@ -14,26 +14,35 @@ const clients = [
 
 export default function Clients() {
   return (
-    <section id="clients" className="py-24 bg-zinc-900">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-14">
-          <p className="text-xs font-semibold tracking-widest uppercase text-[#ffdd15] mb-3">Selected Clients</p>
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">Brands That Trust Us</h2>
-          <p className="mt-4 text-base text-gray-400 max-w-2xl mx-auto">
-            We work across financial services, pharmaceuticals, property, technology, and media — alongside many more clients whose work remains confidential.
+    <section id="clients" className="py-28 bg-black">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10">
+
+        {/* Header */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16 pb-8 border-b border-zinc-900">
+          <div>
+            <span className="rule-yellow mb-4 inline-block" />
+            <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">Selected Clients</h2>
+          </div>
+          <p className="text-sm text-zinc-500 max-w-xs leading-relaxed sm:text-right">
+            Trusted by leading brands across finance, pharma, property, and media.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-px bg-zinc-700/30 border border-zinc-700/30 rounded-2xl overflow-hidden">
+        {/* Client list — editorial typographic treatment */}
+        <div className="divide-y divide-zinc-900">
           {clients.map((client) => (
-            <div key={client} className="flex items-center justify-center px-6 py-7 bg-zinc-900 hover:bg-zinc-800 transition-colors duration-300">
-              <span className="text-sm font-semibold text-gray-300 text-center leading-snug">{client}</span>
+            <div key={client} className="group flex items-center justify-between py-5 hover:bg-zinc-950 -mx-6 px-6 sm:-mx-10 sm:px-10 transition-colors duration-200 cursor-default">
+              <span className="text-xl sm:text-2xl font-bold text-zinc-400 group-hover:text-white transition-colors duration-300 tracking-tight">
+                {client}
+              </span>
+              <span className="w-1.5 h-1.5 rounded-full bg-zinc-800 group-hover:bg-[#ffdd15] transition-colors duration-300 shrink-0 ml-4" />
             </div>
           ))}
-          <div className="flex items-center justify-center px-6 py-7 bg-zinc-900">
-            <span className="text-sm text-zinc-600 text-center italic">+ more under NDA</span>
+          <div className="flex items-center justify-between py-5 -mx-6 px-6 sm:-mx-10 sm:px-10">
+            <span className="text-base text-zinc-700 italic">Plus many more under NDA</span>
           </div>
         </div>
+
       </div>
     </section>
   );
