@@ -1,79 +1,71 @@
-const projects = [
+const steps = [
   {
-    category: "Brand Campaign",
-    title: "Elevating a Regional Bank's Digital Presence",
-    result: "312% increase in digital leads",
-    tags: ["Social Media", "SEO", "Content"],
-    color: "from-blue-600 to-cyan-500",
+    number: "01",
+    title: "Brief & Discovery",
+    description:
+      "Every project begins with a thorough brief. We take time to understand your creative vision, technical requirements, delivery specs, and any sensitivities — before a single frame is touched.",
   },
   {
-    category: "Video Production",
-    title: "Product Launch Film for a Tech Startup",
-    result: "2.4M views in first 30 days",
-    tags: ["Video", "Distribution", "PR"],
-    color: "from-violet-600 to-purple-500",
+    number: "02",
+    title: "Pipeline Design",
+    description:
+      "We map a bespoke workflow around your project — camera formats, VFX pulls, versioning requirements, and broadcaster deliverables — so nothing is left to chance in post.",
   },
   {
-    category: "Digital Strategy",
-    title: "Scaling an E-Commerce Brand to 7 Figures",
-    result: "8x ROAS across paid channels",
-    tags: ["Paid Ads", "Analytics", "CRO"],
-    color: "from-rose-600 to-orange-500",
+    number: "03",
+    title: "Production & Capture",
+    description:
+      "Where we're involved on the shoot, our on-set team ensures the production pipeline feeds seamlessly into post. Consistent metadata, organised rushes, no surprises in the edit.",
   },
   {
-    category: "Brand Identity",
-    title: "Rebranding a 20-Year-Old Retail Chain",
-    result: "42% lift in brand recognition",
-    tags: ["Strategy", "Design", "Web"],
-    color: "from-emerald-600 to-teal-500",
+    number: "04",
+    title: "Post Production",
+    description:
+      "Offline, online, grade, VFX, and audio — handled in-house or with our trusted partner network. You have a single point of contact throughout, with regular reviews built into the schedule.",
+  },
+  {
+    number: "05",
+    title: "Review & Approval",
+    description:
+      "Secure, private review links for client feedback. No public sharing, no third-party platforms that compromise confidentiality. Notes are tracked, actioned, and signed off at each stage.",
+  },
+  {
+    number: "06",
+    title: "Delivery & Archive",
+    description:
+      "Masters delivered to spec, on time. We handle QC, broadcast compliance, and multi-platform versioning. Your assets are securely archived and accessible when you need them.",
   },
 ];
 
 export default function Work() {
   return (
-    <section id="work" className="py-24 bg-gray-950 text-white">
+    <section id="process" className="py-24 bg-gray-950 text-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <p className="text-sm font-semibold tracking-widest uppercase text-blue-400 mb-3">
-            Our Work
+            How We Work
           </p>
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
-            Results We're Proud Of
+            A Process Built for High-Stakes Projects
           </h2>
           <p className="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
-            A snapshot of the campaigns and projects we've delivered for clients
-            across industries.
+            Rigorous. Transparent. Confidential. Our workflow is designed for
+            clients where getting it right — and keeping it private — is
+            non-negotiable.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {projects.map((p) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {steps.map((s) => (
             <div
-              key={p.title}
-              className="group relative rounded-2xl overflow-hidden bg-gray-900 border border-gray-800 hover:border-gray-600 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+              key={s.number}
+              className="rounded-2xl bg-gray-900 border border-gray-800 p-8 hover:border-gray-600 transition-colors"
             >
-              <div className={`h-2 w-full bg-gradient-to-r ${p.color}`} />
-              <div className="p-8">
-                <p className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-2">
-                  {p.category}
-                </p>
-                <h3 className="text-xl font-bold text-white mb-4 leading-snug">
-                  {p.title}
-                </h3>
-                <p className={`text-lg font-extrabold text-transparent bg-clip-text bg-gradient-to-r ${p.color} mb-4`}>
-                  {p.result}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {p.tags.map((t) => (
-                    <span
-                      key={t}
-                      className="px-3 py-1 rounded-full text-xs font-medium bg-gray-800 text-gray-400"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </div>
+              <p className="text-4xl font-extrabold text-blue-600/30 mb-4 leading-none">
+                {s.number}
+              </p>
+              <h3 className="text-lg font-bold text-white mb-3">{s.title}</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">{s.description}</p>
             </div>
           ))}
         </div>

@@ -9,8 +9,8 @@ export default function Footer() {
           © {new Date().getFullYear()} BAC Media. All rights reserved.
         </p>
         <div className="flex items-center gap-6 text-sm text-gray-500">
-          <a href="#services" className="hover:text-gray-300 transition-colors">Services</a>
-          <a href="#work" className="hover:text-gray-300 transition-colors">Work</a>
+          <a href="#capabilities" className="hover:text-gray-300 transition-colors">Capabilities</a>
+          <a href="#process" className="hover:text-gray-300 transition-colors">Process</a>
           <a href="#about" className="hover:text-gray-300 transition-colors">About</a>
           <a href="#contact" className="hover:text-gray-300 transition-colors">Contact</a>
         </div>

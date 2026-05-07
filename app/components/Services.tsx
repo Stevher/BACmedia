@@ -1,68 +1,64 @@
-const services = [
+const capabilities = [
   {
-    icon: "📣",
-    title: "Digital Marketing",
+    title: "Offline Editing",
     description:
-      "Data-driven campaigns across search, social, and display that put your brand in front of the right audience at the right time.",
+      "From assembly cut to picture lock. We work across long-form drama, documentary, commercials, and branded content — shaping story with precision and pace.",
   },
   {
-    icon: "🎬",
-    title: "Video & Content Production",
+    title: "Online & Finishing",
     description:
-      "From brand films to social reels, we produce scroll-stopping content that tells your story and drives engagement.",
+      "Conform, grade, and deliver to any broadcast or streaming specification. We handle complex VFX pulls, multi-version deliverables, and tight turnaround deadlines without compromise.",
   },
   {
-    icon: "🎨",
-    title: "Brand Strategy & Design",
+    title: "Colour Grading",
     description:
-      "We build cohesive brand identities — from positioning and messaging to visual systems that stand out in a crowded market.",
+      "Cinematic, commercial, or broadcast — our DI pipeline handles every format. We work in Resolve with calibrated suites, ensuring your image is exactly what was intended on every screen.",
   },
   {
-    icon: "📊",
-    title: "Analytics & Insights",
+    title: "VFX & Motion Graphics",
     description:
-      "Turn raw data into actionable strategy. We track what matters and optimize every campaign for maximum ROI.",
+      "From invisible wire removal and clean-up to full motion design packages and title sequences. We integrate seamlessly into your post pipeline at whatever stage you need us.",
   },
   {
-    icon: "📰",
-    title: "PR & Communications",
+    title: "Audio Post",
     description:
-      "Earn media coverage, build credibility, and manage your reputation with targeted press and communications campaigns.",
+      "Dialogue edit, ADR, sound design, mix, and master for broadcast, cinema, and digital. Delivered to any spec — Dolby Atmos, stereo, 5.1 — on time, every time.",
   },
   {
-    icon: "💻",
-    title: "Web & Digital Experience",
+    title: "Production & Shooting",
     description:
-      "High-performance websites and landing pages designed to convert — built fast, built to last, and built for your users.",
+      "Full production capability from single-camera shoots to multi-camera studio builds. We produce, direct, and crew — with the same confidentiality standards applied throughout.",
   },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 bg-white">
+    <section id="capabilities" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <p className="text-sm font-semibold tracking-widest uppercase text-blue-600 mb-3">
             What We Do
           </p>
           <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">
-            Services Built to Move the Needle
+            End-to-End Post Production
           </h2>
           <p className="mt-4 text-lg text-gray-500 max-w-2xl mx-auto">
-            Every service we offer is designed with one goal in mind: growth
-            that compounds over time.
+            A complete in-house pipeline — from first assembly to final
+            delivery. One team, total accountability.
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((s) => (
+          {capabilities.map((c, i) => (
             <div
-              key={s.title}
+              key={c.title}
               className="group p-8 rounded-2xl border border-gray-100 bg-gray-50 hover:bg-white hover:border-blue-100 hover:shadow-lg transition-all duration-300"
             >
-              <div className="text-3xl mb-4">{s.icon}</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">{s.title}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{s.description}</p>
+              <div className="w-8 h-8 rounded-full bg-blue-600 text-white text-xs font-bold flex items-center justify-center mb-4">
+                {String(i + 1).padStart(2, "0")}
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">{c.title}</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">{c.description}</p>
             </div>
           ))}
         </div>
