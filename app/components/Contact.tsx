@@ -4,8 +4,22 @@ import { useState } from "react";
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      company: (form.elements.namedItem("company") as HTMLInputElement).value,
+      service: (form.elements.namedItem("service") as HTMLSelectElement).value,
+      brief: (form.elements.namedItem("brief") as HTMLTextAreaElement).value,
+      source: "form",
+    };
+    await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
     setSubmitted(true);
   }
 
@@ -57,20 +71,20 @@ export default function Contact() {
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-[10px] font-semibold uppercase tracking-widest text-zinc-600 mb-2">Name</label>
-                    <input type="text" required placeholder="Jane Smith" className={inputClass} />
+                    <input type="text" name="name" required placeholder="Jane Smith" className={inputClass} />
                   </div>
                   <div>
                     <label className="block text-[10px] font-semibold uppercase tracking-widest text-zinc-600 mb-2">Email</label>
-                    <input type="email" required placeholder="jane@company.com" className={inputClass} />
+                    <input type="email" name="email" required placeholder="jane@company.com" className={inputClass} />
                   </div>
                 </div>
                 <div>
                   <label className="block text-[10px] font-semibold uppercase tracking-widest text-zinc-600 mb-2">Company</label>
-                  <input type="text" placeholder="Your Company" className={inputClass} />
+                  <input type="text" name="company" placeholder="Your Company" className={inputClass} />
                 </div>
                 <div>
                   <label className="block text-[10px] font-semibold uppercase tracking-widest text-zinc-600 mb-2">Service</label>
-                  <select className={inputClass}>
+                  <select name="service" className={inputClass}>
                     <option value="">Select a service...</option>
                     <option>Offline Editing</option>
                     <option>Online &amp; Finishing</option>
@@ -83,7 +97,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <label className="block text-[10px] font-semibold uppercase tracking-widest text-zinc-600 mb-2">Brief</label>
-                  <textarea required rows={4} placeholder="Tell us about your project, timeline, and requirements..." className={`${inputClass} resize-none`} />
+                  <textarea name="brief" required rows={4} placeholder="Tell us about your project, timeline, and requirements..." className={`${inputClass} resize-none`} />
                 </div>
                 <button type="submit" className="w-full py-3.5 bg-[#ffdd15] text-black text-[11px] font-bold tracking-[0.15em] uppercase hover:bg-yellow-300 transition-colors rounded-lg mt-1">
                   Send Message
