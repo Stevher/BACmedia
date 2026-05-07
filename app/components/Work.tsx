@@ -39,16 +39,16 @@ const steps = [
 
 export default function Work() {
   return (
-    <section id="process" className="py-24 bg-gray-950 text-white">
+    <section id="process" className="py-24 bg-[#111111]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <p className="text-sm font-semibold tracking-widest uppercase text-[#ffdd15] mb-3">
+          <p className="text-xs font-semibold tracking-widest uppercase text-[#ffdd15] mb-3">
             How We Work
           </p>
-          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
             A Process Built for High-Stakes Projects
           </h2>
-          <p className="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="mt-4 text-lg text-gray-500 max-w-2xl mx-auto">
             Rigorous. Transparent. Confidential. Our workflow is designed for
             clients where getting it right — and keeping it private — is
             non-negotiable.
@@ -59,13 +59,13 @@ export default function Work() {
           {steps.map((s) => (
             <div
               key={s.number}
-              className="rounded-2xl bg-gray-900 border border-gray-800 p-8 hover:border-gray-600 transition-colors"
+              className="rounded-2xl bg-[#0f0f0f] border border-white/5 p-8 hover:border-[#ffdd15]/20 transition-colors"
             >
-              <p className="text-4xl font-extrabold text-[#ffdd15]/30 mb-4 leading-none">
+              <p className="text-4xl font-extrabold text-[#ffdd15]/20 mb-4 leading-none">
                 {s.number}
               </p>
-              <h3 className="text-lg font-bold text-white mb-3">{s.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">{s.description}</p>
+              <h3 className="text-base font-bold text-white mb-3">{s.title}</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">{s.description}</p>
             </div>
           ))}
         </div>

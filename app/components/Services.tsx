@@ -33,13 +33,13 @@ const capabilities = [
 
 export default function Services() {
   return (
-    <section id="capabilities" className="py-24 bg-white">
+    <section id="capabilities" className="py-24 bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <p className="text-sm font-semibold tracking-widest uppercase text-[#ffdd15] mb-3">
+          <p className="text-xs font-semibold tracking-widest uppercase text-[#ffdd15] mb-3">
             What We Do
           </p>
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
             End-to-End Post Production
           </h2>
           <p className="mt-4 text-lg text-gray-500 max-w-2xl mx-auto">
@@ -48,16 +48,16 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 border border-white/5 rounded-2xl overflow-hidden">
           {capabilities.map((c, i) => (
             <div
               key={c.title}
-              className="group p-8 rounded-2xl border border-gray-100 bg-gray-50 hover:bg-white hover:border-blue-100 hover:shadow-lg transition-all duration-300"
+              className="group p-8 bg-[#0f0f0f] hover:bg-[#151515] transition-colors duration-300"
             >
-              <div className="w-8 h-8 rounded-full bg-[#ffdd15] text-black text-xs font-bold flex items-center justify-center mb-4">
+              <div className="w-7 h-7 rounded-full bg-[#ffdd15] text-black text-xs font-bold flex items-center justify-center mb-5">
                 {String(i + 1).padStart(2, "0")}
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">{c.title}</h3>
+              <h3 className="text-base font-bold text-white mb-2">{c.title}</h3>
               <p className="text-gray-500 text-sm leading-relaxed">{c.description}</p>
             </div>
           ))}
