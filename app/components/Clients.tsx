@@ -37,11 +37,11 @@ export default function Clients() {
           ))}
 
           <div className="bg-zinc-950 border border-zinc-900 rounded-xl px-7 py-7 flex flex-col justify-center">
-            <h3 className="font-serif text-xl font-normal italic text-zinc-700 leading-snug mb-1.5">
-              And many more…
+            <h3 className="font-serif text-xl font-normal italic text-zinc-500 leading-snug mb-1.5">
+              And more besides.
             </h3>
-            <p className="text-[11px] font-medium tracking-[0.15em] uppercase text-zinc-800">
-              Confidential / NDA
+            <p className="text-[11px] font-medium tracking-[0.15em] uppercase text-zinc-600">
+              Available on request
             </p>
           </div>
         </div>
