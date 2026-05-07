@@ -15,8 +15,9 @@ export default function Hero() {
           Video &amp; Post Production
         </p>
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-tight mb-6">
-          Craft That Speaks.{" "}
-          <span className="text-[#ffdd15]">Discretion Assured.</span>
+          <span className="text-[#ffdd15]">Build.</span>{" "}
+          <span className="text-[#ffdd15]">Align.</span>{" "}
+          <span className="text-[#ffdd15]">Create.</span>
         </h1>
         <p className="max-w-2xl mx-auto text-lg sm:text-xl text-gray-400 leading-relaxed mb-10">
           BAC Media delivers world-class video production and post for the
