@@ -17,17 +17,36 @@ export default function Work() {
           <p className="text-sm text-zinc-500 max-w-xs leading-relaxed">Rigorous. Transparent. Confidential.</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {steps.map((s) => (
-            <div key={s.number} className="group bg-zinc-900 border border-zinc-800 rounded-xl p-8 hover:border-zinc-600 transition-all duration-400">
-              <p className="font-serif text-6xl font-normal text-zinc-800 mb-6 leading-none group-hover:text-[#ffdd15]/10 transition-colors duration-500 select-none">
-                {s.number}
-              </p>
-              <h3 className="text-sm font-semibold text-white tracking-wide mb-2">{s.title}</h3>
-              <p className="text-sm text-zinc-500 leading-relaxed">{s.description}</p>
-            </div>
-          ))}
+        <div className="relative">
+          {/* Vertical timeline line */}
+          <div className="absolute left-[1.4rem] top-3 bottom-3 w-px bg-zinc-800 sm:left-[1.6rem]" />
+
+          <div className="space-y-0">
+            {steps.map((s, i) => (
+              <div key={s.number} className="group relative grid grid-cols-[3.5rem_1fr] sm:grid-cols-[4rem_1fr] lg:grid-cols-[4rem_20rem_1fr] items-start gap-x-6 lg:gap-x-10 py-8">
+
+                {/* Node */}
+                <div className="relative z-10 flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-zinc-800 bg-zinc-950 group-hover:border-[#ffdd15]/60 transition-colors duration-300 mt-0.5">
+                  <span className="font-serif text-[11px] text-zinc-600 group-hover:text-[#ffdd15] transition-colors duration-300 tabular-nums leading-none">
+                    {i + 1}
+                  </span>
+                </div>
+
+                {/* Title */}
+                <h3 className="font-serif text-xl font-normal text-zinc-400 group-hover:text-white transition-colors duration-300 leading-snug pt-0.5 lg:col-span-1">
+                  {s.title}
+                </h3>
+
+                {/* Description — full width on mobile (spans both cols), right col on lg */}
+                <p className="col-start-2 lg:col-start-3 col-end-[-1] text-sm text-zinc-600 leading-relaxed group-hover:text-zinc-400 transition-colors duration-300 mt-1 lg:mt-0.5">
+                  {s.description}
+                </p>
+
+              </div>
+            ))}
+          </div>
         </div>
+
       </div>
     </section>
   );
