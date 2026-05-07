@@ -9,6 +9,7 @@ const clients = [
   "Core Productions",
   "Pam Golding Properties",
   "Pixel Nation",
+  "Partners in Performance",
 ];
 
 export default function Clients() {
