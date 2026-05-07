@@ -1,7 +1,7 @@
 const clients = [
   "PSG Financial Services",
   "FNB",
-  "Rand Standard Bank",
+  "Standard Bank",
   "Momentum",
   "Novo Nordisk",
   "Pharma Dynamics",
