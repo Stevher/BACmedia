@@ -1,24 +1,22 @@
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-950 text-white">
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black text-white">
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-950 to-black" />
       <div
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0 opacity-10"
         style={{
           backgroundImage:
-            "radial-gradient(circle at 25% 60%, #2563eb33 0%, transparent 55%), radial-gradient(circle at 75% 30%, #7c3aed22 0%, transparent 55%)",
+            "radial-gradient(circle at 25% 60%, #ffdd1533 0%, transparent 55%), radial-gradient(circle at 75% 30%, #ffdd1522 0%, transparent 55%)",
         }}
       />
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        <p className="inline-block px-3 py-1 mb-6 text-xs font-semibold tracking-widest uppercase text-blue-400 border border-blue-800 rounded-full bg-blue-950/40">
+        <p className="inline-block px-3 py-1 mb-6 text-xs font-semibold tracking-widest uppercase text-[#ffdd15] border border-[#ffdd15]/30 rounded-full bg-[#ffdd15]/10">
           Video &amp; Post Production
         </p>
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-tight mb-6">
           Craft That Speaks.{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-violet-400">
-            Discretion Assured.
-          </span>
+          <span className="text-[#ffdd15]">Discretion Assured.</span>
         </h1>
         <p className="max-w-2xl mx-auto text-lg sm:text-xl text-gray-400 leading-relaxed mb-10">
           BAC Media delivers world-class video production and post for the
@@ -28,7 +26,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="#contact"
-            className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-blue-600 text-white font-semibold hover:bg-blue-500 transition-colors shadow-lg shadow-blue-900/30"
+            className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-[#ffdd15] text-black font-bold hover:bg-yellow-300 transition-colors"
           >
             Start a Project
           </a>

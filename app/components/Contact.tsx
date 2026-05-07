@@ -14,7 +14,7 @@ export default function Contact() {
     <section id="contact" className="py-24 bg-gray-950 text-white">
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-12">
-          <p className="text-sm font-semibold tracking-widest uppercase text-blue-400 mb-3">
+          <p className="text-sm font-semibold tracking-widest uppercase text-[#ffdd15] mb-3">
             Contact
           </p>
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-4">
@@ -46,7 +46,7 @@ export default function Contact() {
                   type="text"
                   required
                   placeholder="Jane Smith"
-                  className="w-full px-4 py-3 rounded-xl bg-gray-800 border border-gray-700 text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-gray-800 border border-gray-700 text-white placeholder-gray-600 focus:outline-none focus:border-[#ffdd15] transition-colors"
                 />
               </div>
               <div>
@@ -57,7 +57,7 @@ export default function Contact() {
                   type="email"
                   required
                   placeholder="jane@company.com"
-                  className="w-full px-4 py-3 rounded-xl bg-gray-800 border border-gray-700 text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-gray-800 border border-gray-700 text-white placeholder-gray-600 focus:outline-none focus:border-[#ffdd15] transition-colors"
                 />
               </div>
             </div>
@@ -69,7 +69,7 @@ export default function Contact() {
               <input
                 type="text"
                 placeholder="Your Company (optional)"
-                className="w-full px-4 py-3 rounded-xl bg-gray-800 border border-gray-700 text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors"
+                className="w-full px-4 py-3 rounded-xl bg-gray-800 border border-gray-700 text-white placeholder-gray-600 focus:outline-none focus:border-[#ffdd15] transition-colors"
               />
             </div>
 
@@ -78,7 +78,7 @@ export default function Contact() {
                 What are you looking for?
               </label>
               <select
-                className="w-full px-4 py-3 rounded-xl bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-blue-500 transition-colors"
+                className="w-full px-4 py-3 rounded-xl bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-[#ffdd15] transition-colors"
               >
                 <option value="">Select a service...</option>
                 <option>Digital Marketing</option>
@@ -99,13 +99,13 @@ export default function Contact() {
                 required
                 rows={5}
                 placeholder="Describe your goals, timeline, or anything else we should know..."
-                className="w-full px-4 py-3 rounded-xl bg-gray-800 border border-gray-700 text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors resize-none"
+                className="w-full px-4 py-3 rounded-xl bg-gray-800 border border-gray-700 text-white placeholder-gray-600 focus:outline-none focus:border-[#ffdd15] transition-colors resize-none"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full py-4 rounded-full bg-blue-600 text-white font-semibold text-base hover:bg-blue-500 transition-colors shadow-lg shadow-blue-900/30"
+              className="w-full py-4 rounded-full bg-[#ffdd15] text-black font-bold text-base hover:bg-yellow-300 transition-colors shadow-lg shadow-yellow-900/20"
             >
               Send Message
             </button>

@@ -36,7 +36,7 @@ export default function Services() {
     <section id="capabilities" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <p className="text-sm font-semibold tracking-widest uppercase text-blue-600 mb-3">
+          <p className="text-sm font-semibold tracking-widest uppercase text-[#ffdd15] mb-3">
             What We Do
           </p>
           <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">
@@ -54,7 +54,7 @@ export default function Services() {
               key={c.title}
               className="group p-8 rounded-2xl border border-gray-100 bg-gray-50 hover:bg-white hover:border-blue-100 hover:shadow-lg transition-all duration-300"
             >
-              <div className="w-8 h-8 rounded-full bg-blue-600 text-white text-xs font-bold flex items-center justify-center mb-4">
+              <div className="w-8 h-8 rounded-full bg-[#ffdd15] text-black text-xs font-bold flex items-center justify-center mb-4">
                 {String(i + 1).padStart(2, "0")}
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">{c.title}</h3>

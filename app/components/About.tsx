@@ -22,7 +22,7 @@ export default function About() {
         {/* About */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <p className="text-sm font-semibold tracking-widest uppercase text-blue-600 mb-3">
+            <p className="text-sm font-semibold tracking-widest uppercase text-[#ffdd15] mb-3">
               About BAC Media
             </p>
             <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight mb-6">
@@ -48,7 +48,7 @@ export default function About() {
             </p>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-800 transition-colors"
+              className="inline-flex items-center gap-2 text-[#ffdd15] font-semibold hover:text-yellow-300 transition-colors"
             >
               Talk to us about your project
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -63,7 +63,7 @@ export default function About() {
                 key={c.label}
                 className="rounded-2xl bg-gray-50 border border-gray-100 p-8 text-center"
               >
-                <p className="text-3xl font-extrabold text-blue-600 mb-2">{c.value}</p>
+                <p className="text-3xl font-extrabold text-[#ffdd15] mb-2">{c.value}</p>
                 <p className="text-sm text-gray-500 font-medium">{c.label}</p>
               </div>
             ))}
@@ -73,7 +73,7 @@ export default function About() {
         {/* Credentials */}
         <div className="rounded-2xl bg-gray-950 text-white p-10 sm:p-14">
           <div className="max-w-3xl mx-auto text-center mb-10">
-            <p className="text-sm font-semibold tracking-widest uppercase text-blue-400 mb-3">
+            <p className="text-sm font-semibold tracking-widest uppercase text-[#ffdd15] mb-3">
               Credentials
             </p>
             <h3 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
@@ -83,7 +83,7 @@ export default function About() {
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
             {trustSignals.map((s) => (
               <li key={s} className="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
-                <svg className="w-5 h-5 text-blue-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-[#ffdd15] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
                 {s}

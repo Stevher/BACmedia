@@ -42,7 +42,7 @@ export default function Work() {
     <section id="process" className="py-24 bg-gray-950 text-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <p className="text-sm font-semibold tracking-widest uppercase text-blue-400 mb-3">
+          <p className="text-sm font-semibold tracking-widest uppercase text-[#ffdd15] mb-3">
             How We Work
           </p>
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
@@ -61,7 +61,7 @@ export default function Work() {
               key={s.number}
               className="rounded-2xl bg-gray-900 border border-gray-800 p-8 hover:border-gray-600 transition-colors"
             >
-              <p className="text-4xl font-extrabold text-blue-600/30 mb-4 leading-none">
+              <p className="text-4xl font-extrabold text-[#ffdd15]/30 mb-4 leading-none">
                 {s.number}
               </p>
               <h3 className="text-lg font-bold text-white mb-3">{s.title}</h3>

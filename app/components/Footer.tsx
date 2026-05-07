@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="bg-gray-950 border-t border-gray-800 py-10">
       <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-xl font-bold text-white tracking-tight">
-          BAC<span className="text-blue-500">media</span>
+          BAC<span className="text-[#ffdd15]">media</span>
         </p>
         <p className="text-sm text-gray-500">
           © {new Date().getFullYear()} BAC Media. All rights reserved.

@@ -17,7 +17,7 @@ export default function Clients() {
     <section id="clients" className="py-24 bg-gray-50 border-y border-gray-100">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-14">
-          <p className="text-sm font-semibold tracking-widest uppercase text-blue-600 mb-3">
+          <p className="text-sm font-semibold tracking-widest uppercase text-[#ffdd15] mb-3">
             Selected Clients
           </p>
           <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">
