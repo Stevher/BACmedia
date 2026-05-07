@@ -9,21 +9,21 @@ const steps = [
 
 export default function Work() {
   return (
-    <section id="process" className="py-24 bg-zinc-950">
+    <section id="process" className="py-16 bg-zinc-950">
       <div className="max-w-7xl mx-auto px-6 sm:px-10">
 
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14 pb-8 border-b border-zinc-900">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-6 border-b border-zinc-900">
           <h2 className="font-serif text-4xl sm:text-5xl font-normal text-white tracking-tight">Our Process</h2>
           <p className="text-sm text-zinc-500 max-w-xs leading-relaxed">Rigorous. Transparent. Confidential.</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-zinc-900">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {steps.map((s) => (
-            <div key={s.number} className="bg-zinc-950 p-10 group hover:bg-zinc-900/50 transition-colors duration-500">
-              <p className="font-serif text-7xl font-normal text-zinc-900 mb-8 leading-none group-hover:text-[#ffdd15]/10 transition-colors duration-500 select-none">
+            <div key={s.number} className="group bg-zinc-900 border border-zinc-800 rounded-xl p-8 hover:border-zinc-600 transition-all duration-400">
+              <p className="font-serif text-6xl font-normal text-zinc-800 mb-6 leading-none group-hover:text-[#ffdd15]/10 transition-colors duration-500 select-none">
                 {s.number}
               </p>
-              <h3 className="text-sm font-semibold text-white tracking-wide mb-3">{s.title}</h3>
+              <h3 className="text-sm font-semibold text-white tracking-wide mb-2">{s.title}</h3>
               <p className="text-sm text-zinc-500 leading-relaxed">{s.description}</p>
             </div>
           ))}

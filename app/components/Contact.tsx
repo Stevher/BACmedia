@@ -9,31 +9,29 @@ export default function Contact() {
     setSubmitted(true);
   }
 
-  const inputClass = "w-full px-4 py-3 bg-zinc-900 border border-zinc-800 text-white text-sm placeholder-zinc-700 focus:outline-none focus:border-zinc-600 transition-colors";
+  const inputClass = "w-full px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-lg text-white text-sm placeholder-zinc-700 focus:outline-none focus:border-zinc-600 transition-colors";
 
   return (
-    <section id="contact" className="py-24 bg-[#0c0c0c]">
+    <section id="contact" className="py-16 bg-[#0c0c0c]">
       <div className="max-w-7xl mx-auto px-6 sm:px-10">
 
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14 pb-8 border-b border-zinc-900">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-6 border-b border-zinc-900">
           <h2 className="font-serif text-4xl sm:text-5xl font-normal text-white tracking-tight">Get in Touch</h2>
           <p className="text-sm text-zinc-500 max-w-xs leading-relaxed">We respond within one business day.</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
-
-          {/* Left */}
-          <div className="lg:col-span-2 space-y-10">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-14">
+          <div className="lg:col-span-2 space-y-8">
             <p className="font-serif text-xl font-normal text-zinc-300 leading-relaxed">
               Tell us what you're working on. We'll tell you how we can help.
             </p>
-            <div className="space-y-0 divide-y divide-zinc-900">
+            <div className="divide-y divide-zinc-900">
               {[
                 { label: "New project", desc: "Brief us on your production or post requirements." },
                 { label: "Ongoing partnership", desc: "Looking for a long-term post partner?" },
                 { label: "Confidential work", desc: "NDA-first by default. Always." },
               ].map((item) => (
-                <div key={item.label} className="py-5">
+                <div key={item.label} className="py-4">
                   <p className="text-xs font-semibold uppercase tracking-widest text-white mb-1">{item.label}</p>
                   <p className="text-sm text-zinc-500">{item.desc}</p>
                 </div>
@@ -41,11 +39,10 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Right */}
           <div className="lg:col-span-3">
             {submitted ? (
-              <div className="flex flex-col gap-5 py-12">
-                <div className="w-10 h-10 bg-[#ffdd15] flex items-center justify-center">
+              <div className="flex flex-col gap-5 py-10">
+                <div className="w-10 h-10 bg-[#ffdd15] rounded-lg flex items-center justify-center">
                   <svg className="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                   </svg>
@@ -86,9 +83,9 @@ export default function Contact() {
                 </div>
                 <div>
                   <label className="block text-[10px] font-semibold uppercase tracking-widest text-zinc-600 mb-2">Brief</label>
-                  <textarea required rows={5} placeholder="Tell us about your project, timeline, and requirements..." className={`${inputClass} resize-none`} />
+                  <textarea required rows={4} placeholder="Tell us about your project, timeline, and requirements..." className={`${inputClass} resize-none`} />
                 </div>
-                <button type="submit" className="w-full py-3.5 bg-[#ffdd15] text-black text-[11px] font-bold tracking-[0.15em] uppercase hover:bg-yellow-300 transition-colors mt-2">
+                <button type="submit" className="w-full py-3.5 bg-[#ffdd15] text-black text-[11px] font-bold tracking-[0.15em] uppercase hover:bg-yellow-300 transition-colors rounded-lg mt-1">
                   Send Message
                 </button>
               </form>

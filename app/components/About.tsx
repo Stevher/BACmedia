@@ -16,18 +16,17 @@ const credentials = [
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-zinc-950">
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 space-y-24">
+    <section id="about" className="py-16 bg-zinc-950">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 space-y-16">
 
-        {/* About */}
         <div>
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14 pb-8 border-b border-zinc-900">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-6 border-b border-zinc-900">
             <h2 className="font-serif text-4xl sm:text-5xl font-normal text-white tracking-tight">About</h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14">
             <div>
-              <p className="font-serif text-2xl sm:text-3xl font-normal text-white leading-snug mb-8">
+              <p className="font-serif text-2xl sm:text-3xl font-normal text-white leading-snug mb-6">
                 Trusted by the world's most demanding brands. Many of whom we can't name.{" "}
                 <em className="text-zinc-500">That's exactly the point.</em>
               </p>
@@ -39,7 +38,7 @@ export default function About() {
               </a>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-5">
               <p className="text-sm text-zinc-400 leading-relaxed">
                 BAC Media is a video and post production company with a track record spanning financial services, pharmaceuticals, property, technology, and media. We've worked with household names and global brands — some of whom we can introduce you to, many of whom prefer to stay quietly in the credits.
               </p>
@@ -47,10 +46,10 @@ export default function About() {
                 Every project is treated with the same rigour whether it's a 30-second social cut or a broadcast documentary. Every team member operates under NDA as standard.
               </p>
 
-              <div className="grid grid-cols-4 gap-px bg-zinc-800 border border-zinc-800 mt-8">
+              <div className="grid grid-cols-4 gap-3 pt-2">
                 {stats.map((s) => (
-                  <div key={s.label} className="bg-zinc-950 py-6 text-center">
-                    <p className="font-serif text-2xl font-normal text-[#ffdd15] mb-1">{s.value}</p>
+                  <div key={s.label} className="bg-zinc-900 border border-zinc-800 rounded-xl py-5 text-center">
+                    <p className="font-serif text-xl font-normal text-[#ffdd15] mb-1">{s.value}</p>
                     <p className="text-[10px] text-zinc-600 uppercase tracking-widest">{s.label}</p>
                   </div>
                 ))}
@@ -59,16 +58,15 @@ export default function About() {
           </div>
         </div>
 
-        {/* Credentials */}
-        <div className="border-t border-zinc-900 pt-16">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="border-t border-zinc-900 pt-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             <div>
-              <span className="rule-yellow mb-5 inline-block" />
+              <span className="rule-yellow mb-4 inline-block" />
               <p className="font-serif text-xl font-normal text-zinc-300 leading-snug">
                 A track record we can describe, if not always name.
               </p>
             </div>
-            <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
+            <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-8">
               {credentials.map((c) => (
                 <div key={c} className="flex items-start gap-3">
                   <span className="mt-2 w-1 h-1 rounded-full bg-[#ffdd15] shrink-0" />
