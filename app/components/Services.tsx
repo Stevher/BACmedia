@@ -1,10 +1,10 @@
 const capabilities = [
-  { title: "Offline Editing", description: "From assembly cut to picture lock. Drama, documentary, commercials, and branded content — shaped with precision and pace." },
-  { title: "Online & Finishing", description: "Conform, grade, and deliver to any broadcast or streaming spec. Complex VFX pulls, multi-version deliverables, tight deadlines." },
-  { title: "Colour Grading", description: "Cinematic, commercial, or broadcast. We work in Resolve with calibrated suites, ensuring your image lands exactly as intended on every screen." },
-  { title: "VFX & Motion Graphics", description: "Wire removal to full motion design packages and title sequences. We integrate into your pipeline at whatever stage you need." },
-  { title: "Audio Post", description: "Dialogue edit, ADR, sound design, mix, and master. Dolby Atmos, stereo, 5.1 — delivered to spec, every time." },
-  { title: "Production & Shooting", description: "Single-camera shoots to multi-camera studio builds. We produce, direct, and crew — with the same confidentiality standards throughout." },
+  { number: "01", title: "Offline Editing", description: "From assembly cut to picture lock. Drama, documentary, commercials, and branded content — shaped with precision and pace." },
+  { number: "02", title: "Online & Finishing", description: "Conform, grade, and deliver to any broadcast or streaming spec. Complex VFX pulls, multi-version deliverables, tight deadlines." },
+  { number: "03", title: "Colour Grading", description: "Cinematic, commercial, or broadcast. We work in Resolve with calibrated suites, ensuring your image lands exactly as intended on every screen." },
+  { number: "04", title: "VFX & Motion Graphics", description: "Wire removal to full motion design packages and title sequences. We integrate into your pipeline at whatever stage you need." },
+  { number: "05", title: "Audio Post", description: "Dialogue edit, ADR, sound design, mix, and master. Dolby Atmos, stereo, 5.1 — delivered to spec, every time." },
+  { number: "06", title: "Production & Shooting", description: "Single-camera shoots to multi-camera studio builds. We produce, direct, and crew — with the same confidentiality standards throughout." },
 ];
 
 export default function Services() {
@@ -17,20 +17,24 @@ export default function Services() {
           <p className="text-sm text-zinc-500 max-w-xs leading-relaxed">A complete in-house pipeline, from first frame to final delivery.</p>
         </div>
 
-        <div className="divide-y divide-zinc-900">
-          {capabilities.map((c, i) => (
-            <div key={c.title} className="group grid grid-cols-12 gap-4 py-7 hover:bg-zinc-950/60 -mx-6 px-6 sm:-mx-10 sm:px-10 transition-colors duration-300 cursor-default">
-              <span className="col-span-1 hidden sm:block text-[11px] text-zinc-700 font-mono pt-0.5">{String(i + 1).padStart(2, "0")}</span>
-              <h3 className="col-span-12 sm:col-span-3 text-sm font-semibold text-zinc-200 group-hover:text-white transition-colors">{c.title}</h3>
-              <p className="col-span-12 sm:col-span-7 text-sm text-zinc-500 leading-relaxed">{c.description}</p>
-              <div className="col-span-1 hidden sm:flex justify-end pt-0.5">
-                <svg className="w-3.5 h-3.5 text-zinc-800 group-hover:text-[#ffdd15] group-hover:translate-x-0.5 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-zinc-900">
+          {capabilities.map((c) => (
+            <div key={c.title} className="group relative bg-[#0c0c0c] p-10 overflow-hidden flex flex-col hover:bg-zinc-950 transition-colors duration-500">
+              {/* Top accent line */}
+              <div className="absolute top-0 left-0 right-0 h-px bg-zinc-900 group-hover:bg-[#ffdd15] transition-colors duration-500" />
+
+              {/* Ghost number */}
+              <span className="font-serif text-[5.5rem] font-normal leading-none text-zinc-900 group-hover:text-zinc-800 transition-colors duration-500 select-none mb-4">
+                {c.number}
+              </span>
+
+              {/* Content */}
+              <h3 className="font-serif text-xl font-normal text-white mb-3">{c.title}</h3>
+              <p className="text-sm text-zinc-500 leading-relaxed">{c.description}</p>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
