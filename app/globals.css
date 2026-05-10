@@ -1,37 +1,106 @@
 @import "tailwindcss";
 
 :root {
-  --brand: #ffdd15;
-  --font-heading: var(--font-serif);
-  --font-body: var(--font-sans);
+  --bg: #0e0d0b;
+  --surface: #161512;
+  --surface-2: #1c1a17;
+  --border: rgba(255,255,255,0.07);
+  --text: #f0ede8;
+  --muted: #7a756e;
+  --accent: #ffdd15;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: var(--font-sans), Arial, sans-serif;
-  background: #0c0c0c;
-  color: #fff;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
-.font-serif {
-  font-family: var(--font-serif), Georgia, serif;
-}
+.font-serif { font-family: var(--font-serif), Georgia, serif; }
 
-/* Grain overlay */
+/* Subtle grain */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
-  opacity: 0.03;
+  opacity: 0.025;
   pointer-events: none;
   z-index: 9999;
 }
+
+::selection { background-color: var(--accent); color: #000; }
+
+/* ── Utilities ──────────────────────────────────────────── */
 
 .rule-yellow {
   display: block;
   width: 2rem;
   height: 1.5px;
-  background: var(--brand);
+  background: var(--accent);
 }
+
+.label-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.label-tag::before {
+  content: "";
+  display: inline-block;
+  width: 1.25rem;
+  height: 1px;
+  background: var(--accent);
+}
+
+/* Cell background hover */
+.cell-hover { background: var(--surface); transition: background 0.25s; }
+.cell-hover:hover { background: var(--surface-2); }
+
+/* Group-based hover — text reveals */
+.gh-text { color: var(--muted); transition: color 0.3s; }
+.group:hover .gh-text { color: var(--text); }
+
+.gh-accent { color: var(--muted); transition: color 0.3s; }
+.group:hover .gh-accent { color: var(--accent); }
+
+/* Yellow accent line that appears on group hover */
+.gh-line { height: 1px; background: transparent; transition: background 0.5s; }
+.group:hover .gh-line { background: var(--accent); }
+
+/* Process timeline node border */
+.gh-node { border-color: var(--border); transition: border-color 0.3s; }
+.group:hover .gh-node { border-color: var(--accent); }
+
+/* Footer nav links */
+.footer-link { color: var(--muted); transition: color 0.2s; }
+.footer-link:hover { color: var(--accent); }
+
+/* Form inputs — accent focus ring via CSS */
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.form-input:focus { border-color: var(--accent); }
+.form-input::placeholder { color: var(--muted); opacity: 0.5; }
+
+/* Nav link hover */
+.nav-link { color: var(--muted); transition: color 0.3s; }
+.nav-link:hover { color: var(--text); }

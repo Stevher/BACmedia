@@ -2,27 +2,33 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-zinc-950 border-t border-zinc-900">
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 py-14 grid grid-cols-1 sm:grid-cols-3 gap-10">
-        <div className="space-y-3">
-          <Image src="/logo.svg" alt="BAC Media" width={76} height={24} className="brightness-0 invert opacity-50" />
-          <p className="text-xs text-zinc-700 leading-relaxed pt-1">
+    <footer style={{ background: "var(--surface)", borderTop: "1px solid var(--border)" }}>
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 py-16 grid grid-cols-1 sm:grid-cols-3 gap-12">
+
+        <div className="space-y-4">
+          <Image src="/logo.svg" alt="BAC Media" width={76} height={24} className="brightness-0 invert opacity-30" />
+          <p className="text-xs leading-relaxed" style={{ color: "var(--muted)", opacity: 0.55 }}>
             Build. Align. Create.<br />Video &amp; Post Production.
           </p>
         </div>
-        <div className="space-y-2">
-          <p className="text-[10px] font-semibold tracking-widest uppercase text-zinc-700 mb-4">Navigation</p>
+
+        <div className="space-y-3">
+          <p className="text-[10px] font-semibold tracking-widest uppercase mb-5" style={{ color: "var(--muted)", opacity: 0.35 }}>Navigation</p>
           {[["Capabilities", "#capabilities"], ["Process", "#process"], ["About", "#about"], ["Contact", "#contact"]].map(([label, href]) => (
-            <a key={href} href={href} className="block text-sm text-zinc-600 hover:text-[#ffdd15] transition-colors">{label}</a>
+            <a key={href} href={href} className="footer-link block text-sm">{label}</a>
           ))}
         </div>
-        <div className="space-y-2">
-          <p className="text-[10px] font-semibold tracking-widest uppercase text-zinc-700 mb-4">Offices</p>
-          <p className="text-sm text-zinc-600">Johannesburg</p>
-          <p className="text-sm text-zinc-600">Cape Town</p>
-          <p className="text-sm text-zinc-600">London</p>
-          <p className="text-xs text-zinc-800 pt-6">© {new Date().getFullYear()} BAC Media</p>
+
+        <div className="space-y-3">
+          <p className="text-[10px] font-semibold tracking-widest uppercase mb-5" style={{ color: "var(--muted)", opacity: 0.35 }}>Offices</p>
+          <p className="text-sm" style={{ color: "var(--muted)" }}>Johannesburg</p>
+          <p className="text-sm" style={{ color: "var(--muted)" }}>Cape Town</p>
+          <p className="text-sm" style={{ color: "var(--muted)" }}>London</p>
+          <p className="text-xs pt-6" style={{ color: "var(--muted)", opacity: 0.28 }}>
+            &copy; {new Date().getFullYear()} BAC Media
+          </p>
         </div>
+
       </div>
     </footer>
   );

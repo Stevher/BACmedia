@@ -9,26 +9,30 @@ const capabilities = [
 
 export default function Services() {
   return (
-    <section id="capabilities" className="py-16 bg-[#0c0c0c]">
+    <section id="capabilities" className="py-24 sm:py-32" style={{ background: "var(--surface)" }}>
       <div className="max-w-7xl mx-auto px-6 sm:px-10">
 
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-6 border-b border-zinc-900">
-          <h2 className="font-serif text-4xl sm:text-5xl font-normal text-white tracking-tight">Capabilities</h2>
-          <p className="text-sm text-zinc-500 max-w-xs leading-relaxed">A complete in-house pipeline, from first frame to final delivery.</p>
+        <div className="mb-16">
+          <span className="label-tag mb-5 inline-flex">Capabilities</span>
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+            <h2 className="font-serif text-5xl sm:text-6xl leading-[1]">
+              Everything in-house,{" "}
+              <em className="not-italic" style={{ color: "var(--accent)" }}>start to finish.</em>
+            </h2>
+            <p className="text-sm max-w-xs leading-relaxed" style={{ color: "var(--muted)" }}>
+              A complete pipeline under one roof — from first brief to final delivery.
+            </p>
+          </div>
         </div>
 
-        <div className="divide-y divide-zinc-900">
+        <div style={{ borderTop: "1px solid var(--border)" }}>
           {capabilities.map((c) => (
-            <div key={c.title} className="group grid grid-cols-12 items-baseline gap-4 py-6 hover:bg-zinc-950/50 -mx-4 px-4 transition-colors duration-200">
-              <span className="col-span-1 font-serif text-sm text-zinc-700 group-hover:text-[#ffdd15] transition-colors duration-300 tabular-nums">
-                {c.number}
-              </span>
-              <h3 className="col-span-4 font-serif text-xl font-normal text-zinc-400 group-hover:text-white transition-colors duration-300 leading-snug">
-                {c.title}
-              </h3>
-              <p className="col-span-7 text-sm text-zinc-600 leading-relaxed group-hover:text-zinc-400 transition-colors duration-300">
-                {c.description}
-              </p>
+            <div key={c.title}
+              className="group grid grid-cols-12 items-baseline gap-4 py-7"
+              style={{ borderBottom: "1px solid var(--border)" }}>
+              <span className="col-span-1 text-xs tabular-nums gh-accent">{c.number}</span>
+              <h3 className="col-span-4 font-serif text-2xl leading-snug gh-text">{c.title}</h3>
+              <p className="col-span-7 text-sm leading-relaxed gh-text">{c.description}</p>
             </div>
           ))}
         </div>
