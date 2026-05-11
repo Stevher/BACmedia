@@ -1,17 +1,13 @@
 "use client";
 import { useChat } from "@ai-sdk/react";
-import { DefaultChatTransport, type UIMessage } from "ai";
+import { DefaultChatTransport } from "ai";
 import { useEffect, useMemo, useRef, useState } from "react";
 
-const INIT_MESSAGE: UIMessage = {
-  id: "init",
-  role: "assistant",
-  parts: [{ type: "text", text: "Hi — I'm here to help you get in touch with the BAC Media team. What are you working on?" }],
-};
+const GREETING = "Hi — I'm here to help you get in touch with the BAC Media team. What are you working on?";
 
 function getMessageText(parts: Array<{ type: string; text?: string }>): string {
   return parts
-    .filter((p) => p.type === "text" && typeof p.text === "string")
+    .filter((p) => p.type === "text" && typeof p.text === "string" && p.text.length > 0)
     .map((p) => p.text as string)
     .join("");
 }
@@ -26,7 +22,6 @@ export default function ChatWidget() {
 
   const { messages, sendMessage, status } = useChat({
     transport,
-    messages: [INIT_MESSAGE],
     onFinish: async ({ message }) => {
       const text = getMessageText(message.parts as Array<{ type: string; text?: string }>);
       const marker = "[SEND_ENQUIRY]";
@@ -55,11 +50,13 @@ export default function ChatWidget() {
 
   const visibleMessages = useMemo(
     () =>
-      messages.map((m) => {
-        const raw = getMessageText(m.parts as Array<{ type: string; text?: string }>);
-        const text = raw.replace(/\[SEND_ENQUIRY\][\s\S]*$/, "").trim();
-        return { id: m.id, role: m.role, text };
-      }),
+      messages
+        .map((m) => {
+          const raw = getMessageText(m.parts as Array<{ type: string; text?: string }>);
+          const text = raw.replace(/\[SEND_ENQUIRY\][\s\S]*$/, "").trim();
+          return { id: m.id, role: m.role, text };
+        })
+        .filter((m) => m.text.length > 0),
     [messages]
   );
 
@@ -106,6 +103,12 @@ export default function ChatWidget() {
 
           {/* Messages */}
           <div className="overflow-y-auto px-5 py-4 space-y-4" style={{ maxHeight: "20rem" }}>
+            {/* Hardcoded greeting — never sent to the API */}
+            <div className="flex justify-start">
+              <div className="max-w-[85%] px-4 py-2.5 rounded-xl text-sm leading-relaxed bg-zinc-900 text-zinc-300 border border-zinc-800">
+                {GREETING}
+              </div>
+            </div>
             {visibleMessages.map((m) =>
               m.text ? (
                 <div key={m.id} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>

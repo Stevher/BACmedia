@@ -22,10 +22,19 @@ Do not include [SEND_ENQUIRY] until the user has confirmed they want their enqui
 export async function POST(req: Request) {
   const { messages } = await req.json();
 
+  // Drop any message whose text content is empty — Anthropic rejects empty text blocks.
+  const safeMessages = (messages as Array<{ role: string; content: unknown; parts?: Array<{ type: string; text?: string }> }>).filter((m) => {
+    if (Array.isArray(m.parts)) {
+      return m.parts.some((p) => p.type !== "text" || (typeof p.text === "string" && p.text.trim().length > 0));
+    }
+    if (typeof m.content === "string") return m.content.trim().length > 0;
+    return true;
+  });
+
   const result = streamText({
     model: anthropic("claude-haiku-4-5-20251001"),
     system: SYSTEM,
-    messages,
+    messages: safeMessages,
     maxOutputTokens: 400,
   });
 
